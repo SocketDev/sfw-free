@@ -22,6 +22,8 @@ This is the release repo for **Socket Firewall Free**. You may download the bina
 
 ### GitHub Actions
 
+Use the official [Socket GitHub Action](https://github.com/socketdev/action)
+
 ```yaml
 on: push
 
@@ -32,6 +34,9 @@ jobs:
     steps:
       # add Socket Firewall to the runner environment
       - uses: socketdev/action@v1
+        with:
+          mode: firewall
+          firewall-version: latest # or use a pinned version (see releases)
             
       # setup your project (e.g. checkout, setup-node, etc...)
       - uses: actions/checkout@v5
@@ -44,7 +49,7 @@ jobs:
 
 ### Manual
 
-Download the binary distribution matching your environemnt from the [Repository Releases](https://github.com/SocketDev/sfw-free/releases)
+Download the binary distribution matching your environemnt from the [repository releases](https://github.com/SocketDev/sfw-free/releases)
 
 ## License
 
