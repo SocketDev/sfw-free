@@ -3,7 +3,7 @@ releases, but we recommend that using one of the official methods below:
 
 ## Installation
 
-### Local
+### Local / CLI
 
 1. Install from npmjs.com  _(or: `pnpm`, `yarn`, etc ...)_
   ```shell
@@ -41,6 +41,10 @@ jobs:
       - run: sfw npm install lodash
       - run: sfw pip install requests
 ```
+
+### Manual
+
+Download the binary distribution matching your environemnt from: https://github.com/SocketDev/sfw-free/releases
 
 ## License
 
