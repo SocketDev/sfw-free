@@ -44,7 +44,7 @@ jobs:
 
 ### Manual
 
-Download the binary distribution matching your environemnt from: https://github.com/SocketDev/sfw-free/releases
+Download the binary distribution matching your environemnt from the [Repository Releases](https://github.com/SocketDev/sfw-free/releases)
 
 ## License
 
