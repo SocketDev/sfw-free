@@ -1,5 +1,5 @@
-This is the release repo for Socket Firewall Lite. You may download the binaries from one of the
-releases, but we recommend that using one of the official methods below:
+This is the release repo for **Socket Firewall Free**. You may download the binaries from one of the
+[releases](https://github.com/SocketDev/sfw-free/releases), but we recommend that using one of the official methods below:
 
 ## Installation
 
