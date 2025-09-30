@@ -1,5 +1,46 @@
 This is the release repo for Socket Firewall Lite. You may download the binaries from one of the
-releases, but we recommend that you use the NPM-based installation method.
+releases, but we recommend that using one of the official methods below:
+
+## Installation
+
+### Local
+
+1. Install from npmjs.com  _(or: `pnpm`, `yarn`, etc ...)_
+  ```shell
+  npm install --global sfw
+  ```
+
+2. Use with any of the supported package managers:
+  ```
+  sfw npm install
+  sfw yarn install
+  sfw pnpm install
+  sfw pip install -r requirements.txt
+  sfw uv pip install .
+  sfw cargo build
+  ```
+
+### GitHub Actions
+
+```yaml
+on: push
+
+jobs:
+  job-id:
+    # Socket Firewall supports Linux, Windows, and macOS
+    runs-on: ubuntu-latest
+    steps:
+      # add Socket Firewall to the runner environment
+      - uses: socketdev/action@v1
+            
+      # setup your project (e.g. checkout, setup-node, etc...)
+      - uses: actions/checkout@v5
+      
+      # example usage
+      - run: sfw npm ci
+      - run: sfw npm install lodash
+      - run: sfw pip install requests
+```
 
 ## License
 
