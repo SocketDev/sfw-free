@@ -1,28 +1,94 @@
-This is the release repo for **Socket Firewall Free**. You may download the binaries from one of the
-[releases](https://github.com/SocketDev/sfw-free/releases), but we recommend that using one of the official methods below:
+# Socket Firewall Free
+
+Socket Firewall Free is a lightweight tool that protects developer machines in real time, blocking malicious dependencies before they ever reach your laptop or build system. It works out of the box — no API key and no configuration required.
+
+```
+$ sfw --help
+
+Socket Firewall Free - Network security proxy for package managers
+
+Runs any package manager command with network traffic filtering.
+
+Usage:
+  sfw <command>...
+  sfw --help
+
+  Examples:
+    sfw npm install
+    sfw pip install requests
+
+Provided under the following license:
+https://github.com/SocketDev/sfw-free/blob/main/README.md#license
+```
+
+## Usage
+
+Once installed, sfw should be prefixed to any supported package manager's command:
+
+```
+sfw npm install --save {"ok":false,"error":"No data returned"}
+sfw cargo fetch
+sfw uv pip install flask
+```
+
+## Supported Package Managers:
+
+JavaScript/TypeScript: `npm`, `yarn`, `pnpm` (`sfw` might work with other package managers, but support is not guaranteed)
+Python: `pip`, `uv`
+Rust: `cargo`
+
+> [!NOTE]
+> Socket Firewall Enterprise supports additional ecosystems including Go, Java, Ruby, and .NET. See the [docs](https://docs.socket.dev/docs/socket-firewall-overview) for details.
 
 ## Installation
 
-### Local / CLI
+### npm Installation
 
-1. Install from npmjs.com  _(or: `pnpm`, `yarn`, etc ...)_
-  ```shell
-  npm install --global sfw
-  ```
+The simplest installation method is via npm:
 
-2. Use with any of the supported package managers:
-  ```
-  sfw npm install
-  sfw yarn install
-  sfw pnpm install
-  sfw pip install -r requirements.txt
-  sfw uv pip install .
-  sfw cargo build
-  ```
+```
+npm i -g sfw
+# sfw can then be prefixed in front of package manager commands
+sfw npm install --save {"ok":false,"error":"No data returned"}
+sfw pip install {"ok":false,"error":"No data returned"}
+```
 
-### GitHub Actions
+### Manual Installation
 
-Use the official [Socket GitHub Action](https://github.com/socketdev/action)
+You can also install manually by downloading the appropriate binary from the [releases](https://github.com/SocketDev/sfw-free/releases) page, moving it into your `PATH`, and making it executable. Keep in mind that, if you do this, you'll need to update the binary periodically as we drop support for older versions.
+
+#### macOS
+
+```shell
+# Download the binary (replace with actual release URL)
+curl -L -o sfw https://github.com/SocketDev/sfw-free/releases/latest/download/sfw-darwin-arm64
+chmod +x sfw
+sudo mv sfw /usr/local/bin/
+```
+
+#### Linux
+
+```shell
+# Download the binary (replace with actual release URL)
+curl -L -o sfw https://github.com/SocketDev/sfw-free/releases/latest/download/sfw-linux-x86_64
+chmod +x sfw
+sudo mv sfw /usr/local/bin/
+```
+
+#### Windows
+
+```PowerShell
+# Download the binary (replace with actual release URL)
+Invoke-WebRequest -Uri "https://github.com/SocketDev/sfw-free/releases/latest/download/sfw-windows-amd64.exe" -OutFile "sfw.exe"
+# Move to a directory in your PATH, such as:
+Move-Item sfw.exe "%USERPROFILE%\AppData\Local\Microsoft\WindowsApps\sfw.exe"
+```
+
+### CI/CD Integration
+
+#### GitHub Actions
+
+If you'd like to use sfw in a CI/CD environment, we've supplied a GitHub Action you can use to ensure you're always running the latest version:
 
 ```yaml
 on: push
@@ -35,9 +101,8 @@ jobs:
       # add Socket Firewall to the runner environment
       - uses: socketdev/action@v1
         with:
-          mode: firewall
-          firewall-version: latest # or use a pinned version (see releases)
-            
+          mode: firewall-free
+      
       # setup your project (e.g. checkout, setup-node, etc...)
       - uses: actions/checkout@v5
       
@@ -47,9 +112,12 @@ jobs:
       - run: sfw pip install requests
 ```
 
-### Manual
+## Configuration
 
-Download the binary distribution matching your environemnt from the [repository releases](https://github.com/SocketDev/sfw-free/releases)
+Socket Firewall Free is a zero-configuration tool that works immediately after installation. No API key, configuration files, or setup is required.
+
+> [!NOTE]
+> Socket Firewall Enterprise supports additional ecosystems including Go, Java, Ruby, and .NET. See the [docs](https://docs.socket.dev/docs/socket-firewall-overview) for details.
 
 ## License
 
