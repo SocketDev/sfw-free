@@ -25,7 +25,7 @@ https://github.com/SocketDev/sfw-free/blob/main/README.md#license
 
 Once installed, sfw should be prefixed to any supported package manager's command:
 
-```
+```shell
 sfw npm install --save {"ok":false,"error":"No data returned"}
 sfw cargo fetch
 sfw uv pip install flask
@@ -46,7 +46,7 @@ Rust: `cargo`
 
 The simplest installation method is via npm:
 
-```
+```shell
 npm i -g sfw
 # sfw can then be prefixed in front of package manager commands
 sfw npm install --save {"ok":false,"error":"No data returned"}
