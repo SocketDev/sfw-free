@@ -84,6 +84,31 @@ Invoke-WebRequest -Uri "https://github.com/SocketDev/sfw-free/releases/latest/do
 Move-Item sfw.exe "%USERPROFILE%\AppData\Local\Microsoft\WindowsApps\sfw.exe"
 ```
 
+
+#### Optional: Use Shell Aliases to Avoid Typing sfw Every Time
+
+If you prefer to run standard package managers without explicitly prefixing `sfw`, you can configure shell aliases. This maintains execution through `sfw` while minimizing command overhead.
+
+##### Bash (`~/.bashrc`)
+```Bash
+alias npm="sfw npm"
+```
+
+##### Apply changes:
+```Bash
+source ~/.bashrc
+```
+
+##### Zsh (`~/.zshrc`)
+```Bash
+alias npm="sfw npm"
+```
+
+##### Apply changes:
+```Bash
+source ~/.zshrc
+```
+
 ### CI/CD Integration
 
 #### GitHub Actions
