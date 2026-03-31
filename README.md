@@ -132,7 +132,7 @@ jobs:
       # add Socket Firewall to the runner environment
       - uses: socketdev/action@ba6de6cc0565af1f42295590380973573297e31f
         with:
-          mode: firewall-free
+          mode: firewall
       
       # setup your project (e.g. checkout, setup-node, etc...)
       - uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
