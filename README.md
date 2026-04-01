@@ -61,7 +61,7 @@ You can also install manually by downloading the appropriate binary from the [re
 
 ```shell
 # Download the binary (replace with actual release URL)
-curl -L -o sfw https://github.com/SocketDev/sfw-free/releases/latest/download/sfw-darwin-arm64
+curl -L -o sfw https://github.com/SocketDev/sfw-free/releases/latest/download/sfw-free-macos-arm64
 chmod +x sfw
 sudo mv sfw /usr/local/bin/
 ```
@@ -70,7 +70,7 @@ sudo mv sfw /usr/local/bin/
 
 ```shell
 # Download the binary (replace with actual release URL)
-curl -L -o sfw https://github.com/SocketDev/sfw-free/releases/latest/download/sfw-linux-x86_64
+curl -L -o sfw https://github.com/SocketDev/sfw-free/releases/latest/download/sfw-free-linux-x86_64
 chmod +x sfw
 sudo mv sfw /usr/local/bin/
 ```
@@ -85,7 +85,7 @@ apk add --no-cache libstdc++ libgcc
 
 ```PowerShell
 # Download the binary (replace with actual release URL)
-Invoke-WebRequest -Uri "https://github.com/SocketDev/sfw-free/releases/latest/download/sfw-windows-amd64.exe" -OutFile "sfw.exe"
+Invoke-WebRequest -Uri "https://github.com/SocketDev/sfw-free/releases/latest/download/sfw-free-windows-x86_64.exe" -OutFile "sfw.exe"
 # Move to a directory in your PATH, such as:
 Move-Item sfw.exe "%USERPROFILE%\AppData\Local\Microsoft\WindowsApps\sfw.exe"
 ```
